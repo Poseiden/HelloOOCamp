@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by hbzhu on 01/11/2016.
  */
-public class HelloTest {
+public class LengthTest {
 
 
     @Test
