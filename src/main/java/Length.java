@@ -8,10 +8,12 @@ public class Length {
     private String units;
 
     public boolean compare(Length length) {
-        if(length.getUnits().equals(Units.CM)) {
-            this.length *= 100;
-        }else {
-            this.length /= 100;
+        if(!length.getUnits().equals(this.units)) {
+            if(length.getUnits().equals(Units.CM)) {
+                this.length *= 100;
+            }else {
+                this.length /= 100;
+            }
         }
         return this.length == length.length;
     }
