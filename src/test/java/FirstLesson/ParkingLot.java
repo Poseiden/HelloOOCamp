@@ -1,20 +1,25 @@
 package FirstLesson;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class ParkingLot {
-    private Car car;
+    private Map<String, Car> carList = new HashMap<>();
 
-    public void park(Car car) {
-        this.car = car;
+    public String park(Car car) {
+        String token = UUID.randomUUID().toString();
+        carList.put(token, car);
+        return token;
     }
 
-    public Car pick() {
-        return this.car;
-    }
-
-    public ParkingLot(Car car) {
-        this.car = car;
+    public Car pick(String token) {
+        return carList.get(token);
     }
 
     public ParkingLot() {
+        if(carList == null) {
+            carList = new HashMap<>();
+        }
     }
 }
