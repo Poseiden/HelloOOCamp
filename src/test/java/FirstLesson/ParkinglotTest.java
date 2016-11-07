@@ -2,8 +2,6 @@ package FirstLesson;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.IsSame.sameInstance;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
