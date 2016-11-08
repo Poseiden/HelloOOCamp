@@ -40,7 +40,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void should_return_error_msg_when_using_incorrect_token_to_pick_car() throws Exception {
+    public void should_return_null_when_using_incorrect_token_to_pick_car() throws Exception {
         ParkingLot parkingLot = new ParkingLot();
         Car car = new Car();
 
@@ -49,4 +49,6 @@ public class ParkingLotTest {
 
         assertNull(pickCar);
     }
+
+    //TODO should return null after picked car
 }
