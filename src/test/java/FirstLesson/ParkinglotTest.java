@@ -60,4 +60,6 @@ public class ParkingLotTest {
 
         assertNull(parkingLot.pick(token));
     }
+
+    //todo add test for parking lot capacity.
 }
