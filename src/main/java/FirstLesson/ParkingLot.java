@@ -14,7 +14,7 @@ public class ParkingLot {
     }
 
     public Car pick(String token) {
-        return carList.get(token);
+        return carList.remove(token);
     }
 
     public ParkingLot() {

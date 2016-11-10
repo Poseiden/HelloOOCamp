@@ -50,5 +50,14 @@ public class ParkingLotTest {
         assertNull(pickCar);
     }
 
-    //TODO should return null after picked car
+    @Test
+    public void should_return_null_when_have_picked_car_once() throws Exception {
+        ParkingLot parkingLot = new ParkingLot();
+        Car car = new Car();
+
+        String token = parkingLot.park(car);
+        parkingLot.pick(token);
+
+        assertNull(parkingLot.pick(token));
+    }
 }
