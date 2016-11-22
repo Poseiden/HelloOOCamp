@@ -10,7 +10,7 @@ public class ParkingLotTest {
 
     @Test
     public void should_be_able_to_pick_the_car_after_parking_it() {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
 
         String token = parkingLot.park(car);
@@ -20,7 +20,7 @@ public class ParkingLotTest {
 
     @Test
     public void should_pick_the_car_when_park_it_into_the_parking_lot_with_a_car() throws Exception {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
 
         String token = parkingLot.park(car);
@@ -30,7 +30,7 @@ public class ParkingLotTest {
 
     @Test
     public void should_pick_the_correct_car_after_parking_it_into_parking_lot_with_multi_cars() throws Exception {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
 
         String token = parkingLot.park(car);
@@ -41,7 +41,7 @@ public class ParkingLotTest {
 
     @Test
     public void should_return_null_when_using_incorrect_token_to_pick_car() throws Exception {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
 
         parkingLot.park(car);
@@ -52,7 +52,7 @@ public class ParkingLotTest {
 
     @Test
     public void should_return_null_when_have_picked_car_once() throws Exception {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
 
         String token = parkingLot.park(car);
@@ -62,4 +62,15 @@ public class ParkingLotTest {
     }
 
     //todo add test for parking lot capacity.
+
+    @Test
+    public void should_return_null_when_parking_car_and_parking_lot_is_full() throws Exception {
+        ParkingLot parkingLot = new ParkingLot(1);
+        Car firstCar = new Car();
+        parkingLot.park(firstCar);
+
+        Car secondCar = new Car();
+
+        assertNull((parkingLot.park(secondCar)));
+    }
 }

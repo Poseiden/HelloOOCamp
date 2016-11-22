@@ -6,8 +6,16 @@ import java.util.UUID;
 
 public class ParkingLot {
     private Map<String, Car> carList = new HashMap<>();
+    private int capability = 0;
+
+    public ParkingLot(int capability) {
+        this.capability = capability;
+    }
 
     public String park(Car car) {
+        if(carList.size() >= capability) {
+            return null;
+        }
         String token = UUID.randomUUID().toString();
         carList.put(token, car);
         return token;
@@ -17,9 +25,4 @@ public class ParkingLot {
         return carList.remove(token);
     }
 
-    public ParkingLot() {
-        if(carList == null) {
-            carList = new HashMap<>();
-        }
-    }
 }
