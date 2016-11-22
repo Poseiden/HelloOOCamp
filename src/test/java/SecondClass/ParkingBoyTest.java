@@ -47,13 +47,14 @@ public class ParkingBoyTest {
     @Test
     public void should_pick_car_successfully_from_second_parking_lot_when_parking_boy_park_it_and_first_parking_lot_is_full() throws Exception {
         ParkingLot firstParkLot = new ParkingLot(1);
+        firstParkLot.park(new Car());
         ParkingLot secondParkLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy();
-
-        firstParkLot.park(new Car());
         Car car = new Car();
+
         String token = parkingBoy.park(car, Arrays.asList(firstParkLot, secondParkLot));
 
+        //todo assert first parking lot
         assertThat(secondParkLot.pick(token), sameInstance(car));
     }
 }
