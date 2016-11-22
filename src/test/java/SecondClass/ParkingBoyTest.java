@@ -4,6 +4,8 @@ import FirstLesson.Car;
 import FirstLesson.ParkingLot;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.hamcrest.core.IsSame.sameInstance;
 import static org.junit.Assert.assertThat;
 
@@ -29,5 +31,29 @@ public class ParkingBoyTest {
         String token  = parkingLot.park(car);
 
         assertThat(parkingBoy.pick(token, parkingLot), sameInstance(car));
+    }
+
+    @Test
+    public void should_parking_boy_pick_car_successfully_when_parking_boy_park_it() throws Exception {
+        ParkingLot parkLot = new ParkingLot(1);
+        Car car = new Car();
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        String token = parkingBoy.park(car, parkLot);
+
+        assertThat(parkingBoy.pick(token, parkLot), sameInstance(car));
+    }
+
+    @Test
+    public void should_pick_car_successfully_from_second_parking_lot_when_parking_boy_park_it_and_first_parking_lot_is_full() throws Exception {
+        ParkingLot firstParkLot = new ParkingLot(1);
+        ParkingLot secondParkLot = new ParkingLot(1);
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        firstParkLot.park(new Car());
+        Car car = new Car();
+        String token = parkingBoy.park(car, Arrays.asList(firstParkLot, secondParkLot));
+
+        assertThat(secondParkLot.pick(token), sameInstance(car));
     }
 }
