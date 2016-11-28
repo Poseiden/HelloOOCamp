@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.hamcrest.core.IsSame.sameInstance;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class ParkingBoyTest {
@@ -54,7 +55,7 @@ public class ParkingBoyTest {
 
         String token = parkingBoy.park(car, Arrays.asList(firstParkLot, secondParkLot));
 
-        //todo assert first parking lot
+        assertNull(firstParkLot.pick(token));
         assertThat(secondParkLot.pick(token), sameInstance(car));
     }
 }
