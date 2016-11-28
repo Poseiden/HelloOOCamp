@@ -1,4 +1,4 @@
-package SecondClass;
+package SecondLesson;
 
 import FirstLesson.Car;
 import FirstLesson.ParkingLot;
