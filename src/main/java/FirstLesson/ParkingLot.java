@@ -25,4 +25,8 @@ public class ParkingLot {
         return carList.remove(token);
     }
 
+    public int getEmptyLots() {
+        return capability - carList.size();
+    }
+
 }
