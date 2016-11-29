@@ -62,9 +62,9 @@ public class SmartBoyTest {
         ParkingLot firstParkingLot = new ParkingLot(1);
         firstParkingLot.park(new Car());
         ParkingLot secondParkingLot = new ParkingLot(1);
-
         SmartBoy smartBoy = new SmartBoy(Lists.newArrayList(firstParkingLot, secondParkingLot));
         Car car = new Car();
+
         String token = smartBoy.park(car);
 
         assertThat(secondParkingLot.pick(token), sameInstance(car));
