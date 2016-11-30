@@ -13,10 +13,6 @@ public class Boy {
         this.parkingLots = parkingLots;
     }
 
-    public Boy() {
-
-    }
-
     public Car pick(String token) {
         for (ParkingLot parkingLot: parkingLots) {
             Car car = parkingLot.pick(token);
