@@ -25,11 +25,11 @@ public class SmartBoyTest {
     public void should_parking_boy_pick_car_successfully_when_park_it() {
         ParkingLot parkingLot = new ParkingLot(1);
         Car car = new Car();
-        SmartBoy smartBoy = new SmartBoy(Lists.newArrayList(parkingLot));
+        Boy boy = new SmartBoy(Lists.newArrayList(parkingLot));
 
         String token  = parkingLot.park(car);
 
-        assertThat(smartBoy.pick(token), sameInstance(car));
+        assertThat(boy.pick(token), sameInstance(car));
     }
 
     @Test
@@ -77,8 +77,8 @@ public class SmartBoyTest {
         Car parkedCar = new Car();
         String token = secondParkingLot.park(parkedCar);
 
-        SmartBoy smartBoy = new SmartBoy(Lists.newArrayList(firstParkingLot, secondParkingLot));
-        Car pickedCar = smartBoy.pick(token);
+        Boy boy = new SmartBoy(Lists.newArrayList(firstParkingLot, secondParkingLot));
+        Car pickedCar = boy.pick(token);
 
         assertThat(pickedCar, sameInstance(parkedCar));
     }
