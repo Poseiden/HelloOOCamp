@@ -24,4 +24,14 @@ public class SmartBoy {
     public SmartBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }
+
+    public Car pick(String token) {
+        for (ParkingLot parkingLot: parkingLots) {
+            Car car = parkingLot.pick(token);
+            if(car != null) {
+                return car;
+            }
+        }
+        return null;
+    }
 }

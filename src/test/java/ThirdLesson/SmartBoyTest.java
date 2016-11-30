@@ -69,4 +69,17 @@ public class SmartBoyTest {
 
         assertThat(secondParkingLot.pick(token), sameInstance(car));
     }
+
+    @Test
+    public void should_pick_the_car_from_correct_parking_lot() throws Exception {
+        ParkingLot firstParkingLot = new ParkingLot(1);
+        ParkingLot secondParkingLot = new ParkingLot(1);
+        Car parkedCar = new Car();
+        String token = secondParkingLot.park(parkedCar);
+
+        SmartBoy smartBoy = new SmartBoy(Lists.newArrayList(firstParkingLot, secondParkingLot));
+        Car pickedCar = smartBoy.pick(token);
+
+        assertThat(pickedCar, sameInstance(parkedCar));
+    }
 }
