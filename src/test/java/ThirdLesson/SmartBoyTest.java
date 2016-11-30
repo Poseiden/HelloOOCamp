@@ -38,7 +38,7 @@ public class SmartBoyTest {
         Car car = new Car();
         SmartBoy smartBoy = new SmartBoy(Lists.newArrayList(parkLot));
 
-        String token = smartBoy.park(car, parkLot);
+        String token = smartBoy.park(car);
 
         assertThat(smartBoy.pick(token, parkLot), sameInstance(car));
     }
