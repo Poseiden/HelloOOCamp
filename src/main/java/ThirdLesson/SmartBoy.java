@@ -17,10 +17,6 @@ public class SmartBoy {
         return parkingLot.park(car);
     }
 
-    public Car pick(String token, ParkingLot parkingLot) {
-        return parkingLot.pick(token);
-    }
-
     public SmartBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }

@@ -29,7 +29,7 @@ public class SmartBoyTest {
 
         String token  = parkingLot.park(car);
 
-        assertThat(smartBoy.pick(token, parkingLot), sameInstance(car));
+        assertThat(smartBoy.pick(token), sameInstance(car));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class SmartBoyTest {
 
         String token = smartBoy.park(car);
 
-        assertThat(smartBoy.pick(token, parkLot), sameInstance(car));
+        assertThat(smartBoy.pick(token), sameInstance(car));
     }
 
     @Test
