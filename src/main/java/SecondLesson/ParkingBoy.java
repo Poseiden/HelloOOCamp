@@ -2,24 +2,14 @@ package SecondLesson;
 
 import FirstLesson.Car;
 import FirstLesson.ParkingLot;
+import ThirdLesson.Boy;
 
 import java.util.List;
 
-public class ParkingBoy {
-    private List<ParkingLot> parkingLots;
-
-    public Car pick(String token) {
-        for(ParkingLot parkingLot: parkingLots) {
-            Car car = parkingLot.pick(token);
-            if (car != null) {
-                return car;
-            }
-        }
-        return null;
-    }
+public class ParkingBoy extends Boy {
 
     public ParkingBoy(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
+        super(parkingLots);
     }
 
     public String park(Car car) {
