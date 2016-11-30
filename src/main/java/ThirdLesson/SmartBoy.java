@@ -23,10 +23,6 @@ public class SmartBoy {
         return parkingLot.park(car);
     }
 
-    public String park(Car car, ParkingLot parkingLot) {
-        return parkingLot.park(car);
-    }
-
     public Car pick(String token, ParkingLot parkingLot) {
         return parkingLot.pick(token);
     }
