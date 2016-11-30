@@ -6,15 +6,23 @@ import FirstLesson.ParkingLot;
 import java.util.List;
 
 public class ParkingBoy {
-    public String park(Car car, ParkingLot parkingLot) {
-        return parkingLot.park(car);
+    private List<ParkingLot> parkingLots;
+
+    public Car pick(String token) {
+        for(ParkingLot parkingLot: parkingLots) {
+            Car car = parkingLot.pick(token);
+            if (car != null) {
+                return car;
+            }
+        }
+        return null;
     }
 
-    public Car pick(String token, ParkingLot parkingLot) {
-        return parkingLot.pick(token);
+    public ParkingBoy(List<ParkingLot> parkingLots) {
+        this.parkingLots = parkingLots;
     }
 
-    public String park(Car car, List<ParkingLot> parkingLots) {
+    public String park(Car car) {
         for(ParkingLot parkingLot: parkingLots) {
             String token = parkingLot.park(car);
             if(token != null) {

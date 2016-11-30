@@ -1,5 +1,4 @@
 import org.junit.Test;
-import sun.tools.jconsole.Plotter;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
