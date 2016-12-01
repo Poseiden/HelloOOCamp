@@ -13,7 +13,7 @@ public class SuperBoy extends Boy{
     }
 
     public String park(Car car) {
-        Collections.sort(parkingLots, (o1, o2) -> {
+        Collections.sort(super.getParkingLots(), (o1, o2) -> {
                 double result = o2.getEmptyRate() - o1.getEmptyRate();
                 if(result > 0) {
                     return 1;
@@ -24,6 +24,6 @@ public class SuperBoy extends Boy{
                 }
             }
         );
-        return parkingLots.get(0).park(car);
+        return super.getParkingLots().get(0).park(car);
     }
 }

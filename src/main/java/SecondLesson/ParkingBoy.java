@@ -13,7 +13,7 @@ public class ParkingBoy extends Boy {
     }
 
     public String park(Car car) {
-        for(ParkingLot parkingLot: parkingLots) {
+        for(ParkingLot parkingLot: super.getParkingLots()) {
             String token = parkingLot.park(car);
             if(token != null) {
                 return token;

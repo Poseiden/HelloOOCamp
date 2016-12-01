@@ -6,8 +6,9 @@ import com.google.common.collect.Lists;
 
 import java.util.List;
 
+//todo abstract
 public class Boy {
-    protected List<ParkingLot> parkingLots = Lists.newArrayList();
+    private List<ParkingLot> parkingLots = Lists.newArrayList();
 
     public Boy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
@@ -21,5 +22,9 @@ public class Boy {
             }
         }
         return null;
+    }
+
+    protected List<ParkingLot> getParkingLots() {
+        return this.parkingLots;
     }
 }

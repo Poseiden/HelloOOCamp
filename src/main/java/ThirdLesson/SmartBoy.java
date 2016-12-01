@@ -9,9 +9,9 @@ import java.util.List;
 public class SmartBoy extends Boy {
 
     public String park(Car car) {
-        Collections.sort(parkingLots, (o1, o2) -> o2.getEmptyLots() - o1.getEmptyLots());
+        Collections.sort(super.getParkingLots(), (o1, o2) -> o2.getEmptyLots() - o1.getEmptyLots());
 
-        ParkingLot parkingLot = parkingLots.get(0);
+        ParkingLot parkingLot = super.getParkingLots().get(0);
         return parkingLot.park(car);
     }
 
