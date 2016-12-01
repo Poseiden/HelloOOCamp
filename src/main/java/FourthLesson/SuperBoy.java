@@ -2,6 +2,8 @@ package FourthLesson;
 
 import FirstLesson.Car;
 import FirstLesson.ParkingLot;
+import ThirdLesson.Boy;
+import ThirdLesson.SmartBoy;
 import com.google.common.collect.Lists;
 
 import java.util.Collections;
@@ -29,5 +31,15 @@ public class SuperBoy {
             }
         });
         return parkingLots.get(0).park(car);
+    }
+
+    public Car pick(String token) {
+        for (ParkingLot parkingLot: parkingLots) {
+            Car car = parkingLot.pick(token);
+            if(car != null) {
+                return car;
+            }
+        }
+        return null;
     }
 }
