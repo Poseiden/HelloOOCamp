@@ -1,5 +1,6 @@
 package FirstLesson;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -29,4 +30,7 @@ public class ParkingLot {
         return capability - carList.size();
     }
 
+    public double getEmptyRate() {
+        return (Double.valueOf(capability - carList.size())) / Double.valueOf(capability);
+    }
 }
