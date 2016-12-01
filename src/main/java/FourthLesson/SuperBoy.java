@@ -10,10 +10,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SuperBoy {
-    private List<ParkingLot> parkingLots = Lists.newArrayList();
+public class SuperBoy extends Boy{
     public SuperBoy(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
+        super(parkingLots);
     }
 
     public String park(Car car) {
@@ -31,15 +30,5 @@ public class SuperBoy {
             }
         });
         return parkingLots.get(0).park(car);
-    }
-
-    public Car pick(String token) {
-        for (ParkingLot parkingLot: parkingLots) {
-            Car car = parkingLot.pick(token);
-            if(car != null) {
-                return car;
-            }
-        }
-        return null;
     }
 }
